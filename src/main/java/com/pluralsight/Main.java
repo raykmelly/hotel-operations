@@ -47,14 +47,14 @@ public class Main {
                 "[Employee #1]" +
                         "%n\t-> Total pay: %.2f" +
                         "%n\t-> Regular hours: %.2f" +
-                        "%n\t-> Regular hours: %.2f%n",
+                        "%n\t-> Overtime hours: %.2f%n",
                 employee1.getTotalPay(),employee1.getRegularHours(),employee1.getOvertimeHours());
 
         System.out.printf(
                 "[Employee #2]" +
                         "%n\t-> Total pay: %.2f" +
                         "%n\t-> Regular hours: %.2f" +
-                        "%n\t-> Regular hours: %.2f%n",
+                        "%n\t-> Overtime hours: %.2f%n",
                 employee2.getTotalPay(),employee2.getRegularHours(),employee2.getOvertimeHours());
     }
 }
