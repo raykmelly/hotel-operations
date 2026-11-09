@@ -24,6 +24,7 @@ public class Reservation {
         return dirty;
     }
 
+    // Derived from the properties "dirty" and "occupied"
     public boolean isAvailable() {
         return !dirty && !occupied;
     }
