@@ -9,13 +9,15 @@ public class Main {
         // Display room information
         System.out.printf(
                         "[Room #1]" +
-                        "%n-> Availability status: %b%n",
+                        "%n\t-> Availability status: %b%n",
                 room1.isAvailable());
 
         System.out.printf(
                 "[Room #2]" +
-                        "%n-> Availability status: %b%n",
-                room1.isAvailable());
+                        "%n\t-> Availability status: %b%n",
+                room2.isAvailable());
+
+        System.out.println();
 
         // Create new test reservations
         Reservation reservation1 = new Reservation("King",3,false);
@@ -24,15 +26,17 @@ public class Main {
         // Display reservation information
         System.out.printf(
                         "[Reservation #1]" +
-                        "%n-> Price: $%s per night" +
-                        "%n-> Reservation Total: $%.2f%n",
+                        "%n\t-> Price: $%s per night" +
+                        "%n\t-> Reservation Total: $%.2f%n",
                 reservation1.getPrice(),reservation1.getReservationTotal());
 
         System.out.printf(
                 "[Reservation #2]" +
-                        "%n-> Price: $%s per night" +
-                        "%n-> Reservation Total: $%.2f%n",
+                        "%n\t-> Price: $%s per night" +
+                        "%n\t-> Reservation Total: $%.2f%n",
                 reservation2.getPrice(),reservation2.getReservationTotal());
+
+        System.out.println();
 
         // Create test employees
         Employee employee1 = new Employee(0,"John","IT",28.50,40);
@@ -41,16 +45,16 @@ public class Main {
         // Display employee information
         System.out.printf(
                 "[Employee #1]" +
-                        "%n-> Total pay: %.2f" +
-                        "%n -> Regular hours: %.2f" +
-                        "%n -> Regular hours: %.2f%n",
+                        "%n\t-> Total pay: %.2f" +
+                        "%n\t-> Regular hours: %.2f" +
+                        "%n\t-> Regular hours: %.2f%n",
                 employee1.getTotalPay(),employee1.getRegularHours(),employee1.getOvertimeHours());
 
         System.out.printf(
                 "[Employee #2]" +
-                        "%n-> Total pay: %.2f" +
-                        "%n -> Regular hours: %.2f" +
-                        "%n -> Regular hours: %.2f%n",
+                        "%n\t-> Total pay: %.2f" +
+                        "%n\t-> Regular hours: %.2f" +
+                        "%n\t-> Regular hours: %.2f%n",
                 employee2.getTotalPay(),employee2.getRegularHours(),employee2.getOvertimeHours());
     }
 }

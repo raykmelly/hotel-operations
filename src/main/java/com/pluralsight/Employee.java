@@ -23,7 +23,7 @@ public class Employee {
 
     public double getRegularHours() {
         // Return the hours you worked up to 40 hours
-        return Math.max(this.hoursWorked,40);
+        return Math.min(this.hoursWorked,40);
     }
 
     public double getOvertimeHours() {

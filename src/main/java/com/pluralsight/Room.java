@@ -15,6 +15,11 @@ public class Room {
         this.dirty = dirty;
     }
 
+    // Derived from the properties "dirty" and "occupied"
+    public boolean isAvailable() {
+        return !dirty && !occupied;
+    }
+
     // Getters
     public int getNumberOfBeds() {
         return numberOfBeds;
@@ -30,10 +35,5 @@ public class Room {
 
     public boolean isDirty() {
         return dirty;
-    }
-
-    // Derived from the properties "dirty" and "occupied"
-    public boolean isAvailable() {
-        return !dirty && !occupied;
     }
 }

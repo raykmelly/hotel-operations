@@ -29,13 +29,13 @@ public class Reservation {
 
     public double getReservationTotal() {
         // Calculate the total price of the hotel say
-        double discount = 1;
+        double upcharge = 1;
         if (isWeekend()) {
-            // Price per night decrease by 10%
-            discount = 10.0/100.0;
+            // Price per night increases by 10%
+            upcharge = 0.10;
         }
-        // Number of nights * daily hotel price
-        return this.numberOfNights * (getPrice() * discount);
+        // Number of nights * (daily charge + 10%)
+        return this.numberOfNights * (getPrice() + (getPrice() * upcharge));
     }
 
     // Getters + setters
