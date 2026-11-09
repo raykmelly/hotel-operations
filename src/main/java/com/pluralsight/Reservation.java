@@ -25,6 +25,6 @@ public class Reservation {
     }
 
     public boolean isAvailable() {
-        return !occupied;
+        return !dirty && !occupied;
     }
 }
