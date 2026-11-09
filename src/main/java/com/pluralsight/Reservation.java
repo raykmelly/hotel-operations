@@ -6,7 +6,6 @@ public class Reservation {
     private double price;
     private boolean occupied;
     private boolean dirty;
-    private boolean available;
 
     // Getters
     public int getNumberOfBeds() {
@@ -26,6 +25,6 @@ public class Reservation {
     }
 
     public boolean isAvailable() {
-        return available;
+        return !occupied;
     }
 }
