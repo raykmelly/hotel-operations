@@ -1,7 +1,11 @@
 package com.pluralsight;
 
+import java.util.Scanner;
+
 public class Main {
     public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
         // Create test rooms
         Room room1 = new Room(1,75.0,false,false);
         Room room2 = new Room(2,150.0,false,true);
@@ -71,8 +75,38 @@ public class Main {
                         "%n\t-> Worked %d hours today%n",
                 employee2.getTotalPay(),employee2.getRegularHours(),employee2.getOvertimeHours(),shift2);
 
-        // Hotel stuff
-        Hotel hotel = new Hotel("The Tipton Hotel",10,10);
+        System.out.println();
 
+        // Hotel stuff
+        int numberOfRooms = 10;
+        int numberOfSuites = 5;
+        Hotel hotel = new Hotel("The Tipton Hotel",numberOfSuites,numberOfRooms);
+        System.out.printf(
+                        "[Hotel | (" + hotel.getName() + ")]" +
+                        "%n\t-> Number of basic rooms: %d" +
+                        "%n\t-> Number of suites: %d%n",
+                numberOfRooms,numberOfSuites
+        );
+
+        System.out.println();
+
+        System.out.print("Enter how many rooms you want to book: ");
+        int rooms = scanner.nextInt();
+
+        scanner.nextLine();
+
+        System.out.print("Do you want them to be suites? (Y/N): ");
+        String isSuite = scanner.nextLine();
+
+        boolean canBook = false;
+        if (isSuite.equalsIgnoreCase("Y")) {
+            canBook = hotel.bookRoom(rooms,true);
+        } else if (isSuite.equalsIgnoreCase("N")) {
+            canBook = hotel.bookRoom(rooms,false);
+        }
+
+        System.out.println("Can you book the rooms?: " + canBook);
+
+        scanner.close();
     }
 }
