@@ -70,5 +70,9 @@ public class Main {
                         "%n\t-> Overtime hours: %.2f" +
                         "%n\t-> Worked %d hours today%n",
                 employee2.getTotalPay(),employee2.getRegularHours(),employee2.getOvertimeHours(),shift2);
+
+        // Hotel stuff
+        Hotel hotel = new Hotel("The Tipton Hotel",10,10);
+
     }
 }
