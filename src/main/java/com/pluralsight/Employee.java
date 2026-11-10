@@ -6,6 +6,7 @@ public class Employee {
     private String department;
     private double payRate;
     private double hoursWorked;
+    private int startTime;
 
     // Constructor
     public Employee(int employeeId, String name, String department, double payRate, double hoursWorked) {
@@ -14,6 +15,17 @@ public class Employee {
         this.department = department;
         this.payRate = payRate;
         this.hoursWorked = hoursWorked;
+        this.startTime = 0;
+    }
+
+    // Methods
+    public void punchIn(int time) {
+        this.startTime = time;
+    }
+
+    public int punchOut(int time) {
+        this.hoursWorked += time - this.startTime;
+        return time - this.startTime;
     }
 
     // Derived getters

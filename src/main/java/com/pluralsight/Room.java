@@ -20,6 +20,20 @@ public class Room {
         return !dirty && !occupied;
     }
 
+    // Methods
+    public void checkIn() {
+        this.occupied = true;
+        this.dirty = true;
+    }
+
+    public void checkOut() {
+        this.occupied = false;
+    }
+
+    public void cleanRoom() {
+        this.dirty = false;
+    }
+
     // Getters
     public int getNumberOfBeds() {
         return numberOfBeds;

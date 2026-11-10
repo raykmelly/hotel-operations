@@ -6,6 +6,10 @@ public class Main {
         Room room1 = new Room(1,75.0,false,false);
         Room room2 = new Room(2,150.0,false,true);
 
+        // Check out and clean certain rooms
+        room1.checkIn();
+        room2.cleanRoom();
+
         // Display room information
         System.out.printf(
                         "[Room #1]" +
@@ -39,22 +43,31 @@ public class Main {
         System.out.println();
 
         // Create test employees
-        Employee employee1 = new Employee(0,"John","IT",28.50,40);
-        Employee employee2 = new Employee(0,"Joe","Finance",32,52);
+        Employee employee1 = new Employee(0,"John","IT",28.50,20);
+        Employee employee2 = new Employee(0,"Joe","Finance",32,40);
+
+        // Employees punching in an out
+        employee1.punchIn(9);
+        int shift1 = employee1.punchOut(17);
+
+        employee2.punchIn(5);
+        int shift2 = employee2.punchOut(16);
 
         // Display employee information
         System.out.printf(
                 "[Employee #1]" +
                         "%n\t-> Total pay: %.2f" +
                         "%n\t-> Regular hours: %.2f" +
-                        "%n\t-> Overtime hours: %.2f%n",
-                employee1.getTotalPay(),employee1.getRegularHours(),employee1.getOvertimeHours());
+                        "%n\t-> Overtime hours: %.2f" +
+                        "%n\t-> Worked %d hours today%n",
+                employee1.getTotalPay(),employee1.getRegularHours(),employee1.getOvertimeHours(),shift1);
 
         System.out.printf(
                 "[Employee #2]" +
                         "%n\t-> Total pay: %.2f" +
                         "%n\t-> Regular hours: %.2f" +
-                        "%n\t-> Overtime hours: %.2f%n",
-                employee2.getTotalPay(),employee2.getRegularHours(),employee2.getOvertimeHours());
+                        "%n\t-> Overtime hours: %.2f" +
+                        "%n\t-> Worked %d hours today%n",
+                employee2.getTotalPay(),employee2.getRegularHours(),employee2.getOvertimeHours(),shift2);
     }
 }
