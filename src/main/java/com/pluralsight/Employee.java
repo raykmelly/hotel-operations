@@ -1,5 +1,7 @@
 package com.pluralsight;
 
+import java.time.LocalTime;
+
 public class Employee {
     private int employeeId;
     private String name;
@@ -27,6 +29,17 @@ public class Employee {
         // Make sure you only punch out IF you punch in (duh)
         this.hoursWorked += time - this.startTime;
         return time - this.startTime;
+    }
+
+    // Overloaded methods
+    public void punchIn() {
+        LocalTime time = LocalTime.now();
+        this.startTime = time.getHour();
+    }
+
+    public void punchOut() {
+        LocalTime time = LocalTime.now();
+        this.hoursWorked += time.getHour() - this.startTime;
     }
 
     // Derived getters
