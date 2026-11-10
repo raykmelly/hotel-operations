@@ -22,8 +22,12 @@ public class Room {
 
     // Methods
     public void checkIn() {
-        this.occupied = true;
-        this.dirty = true;
+        if (isAvailable()) {
+            this.occupied = true;
+            this.dirty = true;
+        } else {
+            System.out.println("Error: the room cannot be checked into");
+        }
     }
 
     public void checkOut() {

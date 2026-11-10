@@ -24,6 +24,7 @@ public class Employee {
     }
 
     public int punchOut(int time) {
+        // Make sure you only punch out IF you punch in (duh)
         this.hoursWorked += time - this.startTime;
         return time - this.startTime;
     }
