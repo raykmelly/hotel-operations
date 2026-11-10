@@ -8,6 +8,7 @@ public class Main {
 
         // Check out and clean certain rooms
         room1.checkIn();
+        room1.checkOut();
         room2.cleanRoom();
 
         // Display room information
